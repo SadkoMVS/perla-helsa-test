@@ -1,0 +1,29 @@
+:root { 
+  --black: #18181b;
+  --black-2: #000000;
+  --green-2: #049854;
+  --grey: #696969;
+  --grey-2: #84878c;
+  --light-grey: #b0b0b0;
+  --surfacegreen: #e1f5ea;
+  --surfacelight-grey: #f0f0f0;
+  --white: #ffffff;
+
+  --font-size-l: 13.3px;
+  --font-size-m: 12px;
+  --font-size-s: 9px;
+  --font-size-xl: 14px;
+  --font-size-xxl: 16px;
+  --font-size-xxxl: 20px;
+
+  --font-family-inter: "Inter", Helvetica;
+  --font-family-onest: "Onest", Helvetica;
+}
+
+.onest-medium-gunsmoke-16px {
+  color: var(--grey-2);
+  font-family: var(--font-family-onest);
+  font-size: var(--font-size-xxl);
+  font-style: normal;
+  font-weight: 500;
+}

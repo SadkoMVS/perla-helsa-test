@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="css/cart-3.css" />
+  <link rel="stylesheet" type="text/css" href="css/styleguide.css" />
+  <link rel="stylesheet" type="text/css" href="css/globals.css" />
+</head>
+<body style="margin: 0; background: #ffffff">
+    <div class="cart-3">
+      <header class="cart-header">
+         <img class="icons" src="img/logo-wrapper@2x.png" alt="Icons / Back" />
+      </header>
+
+      <main class="content">
+        <h1 class="text-1 valign-text-middle">Дані отримувача</h1>
+        <div class="gift-box">
+            <img class="mynauigift" src="img/mynaui-gift.svg" alt="mynaui:gift" />
+            <h2 class="text-2 valign-text-middle">Загадковий подарунок</h2>
+              <p class="text-3 valign-text-middle">
+                Подарунок-сюрприз йде разом з вашим замовленням. Не пропустіть! (це не пробник)
+        </div>
+
+        <form>
+          <div class="input-field">
+            <div class="x-wrapper x-wrapper-email">
+              <label for="email" class="input-label">Email *</label>
+              <input type="email" id="email" name="email" required oninput="toggleLabel(this)" />
+            </div>
+          </div>
+
+          <div class="input-field">
+            <div class="x-wrapper-checkbox">
+              <input type="checkbox" id="create-account" name="create-account" onclick="togglePasswordField()">
+              <label for="create-account" class="input-label">
+                Створити обліковий запис <span>(швидші покупки)</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="input-field hidden" id="account-info">
+            <p class="input-label">
+              Тепер ти можеш продовжити покупки. Після оформлення замовлення ми надішлемо тобі посилання для підтвердження реєстрації акаунту.
+            </p>
+          </div>
+
+          <div class="input-field hidden" id="password-field">
+            <div class="x-wrapper x-wrapper-password">
+              <label for="password" class="input-label">Пароль *</label>
+              <input type="password" id="password" name="password" required oninput="toggleLabel(this)" />
+            </div>
+          </div>
+
+          <div class="input-field">
+            <div class="x-wrapper x-wrapper-name">
+              <label for="name" class="input-label">Ім’я та прізвище *</label>
+              <input type="text" id="name" name="name" required oninput="toggleLabel(this)" />
+            </div>
+          </div>
+
+          <div class="input-field">
+            <div class="x-wrapper x-wrapper-phone">
+              <label for="phone" class="input-label">Phone *</label>
+              <input type="tel" id="phone" name="phone" required oninput="toggleLabel(this)" />
+            </div>
+          </div>
+
+          <div class="input-field">
+            <div class="x-wrapper x-wrapper-country">
+              <label for="country" class="input-label">Країна *</label>
+              <input type="text" id="country" name="country" required oninput="toggleLabel(this)" />
+            </div>
+          </div>
+
+          <div class="input-field">
+            <div class="x-wrapper x-wrapper-postal-code">
+              <label for="postal-code" class="input-label">Поштовий код *</label>
+              <input type="text" id="postal-code" name="postal-code" required oninput="toggleLabel(this); fetchCityAndStreet(this.value);" />
+            </div>
+          </div>
+
+          <div class="input-field">
+            <div class="x-wrapper x-wrapper-city">
+              <label for="city" class="input-label">Місто *</label>
+              <input type="text" id="city" name="city" required oninput="toggleLabel(this)" />
+            </div>
+          </div>
+
+          <div class="input-field">
+            <div class="x-wrapper x-wrapper-street">
+              <label for="street" class="input-label">Вулиця і номер будинку *</label>
+              <input type="text" id="street" name="street" required oninput="toggleLabel(this)" />
+            </div>
+          </div>
+
+          <div class="input-field">
+            <div class="x-wrapper-checkbox">
+              <input type="checkbox" id="other-recipient" name="other-recipient" onclick="toggleOtherRecipientFields()">
+              <label for="other-recipient" class="input-label">
+                Інший одержувач <span>(внести дані для іншого одержувача)</span>
+              </label>
+            </div>
+          </div>
+
+          <div id="other-recipient-fields" class="hidden">
+            <div class="input-field">
+              <div class="x-wrapper x-wrapper-email">
+                <label for="other-email" class="input-label">Email *</label>
+                <input type="email" id="other-email" name="other-email" required oninput="toggleLabel(this)" />
+              </div>
+            </div>
+
+            <div class="input-field">
+              <div class="x-wrapper x-wrapper-name">
+                <label for="other-name" class="input-label">Ім’я та прізвище *</label>
+                <input type="text" id="other-name" name="other-name" required oninput="toggleLabel(this)" />
+              </div>
+            </div>
+
+            <div class="input-field">
+              <div class="x-wrapper x-wrapper-phone">
+                <label for="other-phone" class="input-label">Phone *</label>
+                <input type="tel" id="other-phone" name="other-phone" required oninput="toggleLabel(this)" />
+              </div>
+            </div>
+
+            <div class="input-field">
+              <div class="x-wrapper x-wrapper-postal-code">
+                <label for="other-postal-code" class="input-label">Поштовий код *</label>
+                <input type="text" id="other-postal-code" name="other-postal-code" required oninput="toggleLabel(this)" />
+              </div>
+            </div>
+
+            <div class="input-field">
+              <div class="x-wrapper x-wrapper-city">
+                <label for="other-city" class="input-label">Місто *</label>
+                <input type="text" id="other-city" name="other-city" required oninput="toggleLabel(this)" />
+              </div>
+            </div>
+
+            <div class="input-field">
+              <div class="x-wrapper x-wrapper-street">
+                <label for="other-street" class="input-label">Вулиця і номер будинку *</label>
+                <input type="text" id="other-street" name="other-street" required oninput="toggleLabel(this)" />
+              </div>
+            </div>
+          </div>
+
+          <div class="input-field">
+            <div class="x-wrapper-checkbox">
+              <input type="checkbox" id="promotions" name="promotions">
+              <label for="promotions" class="input-label">
+                Я хочу першим отримувати акційні пропозиції та поради від експертів на електронну пошту
+              </label>
+            </div>
+          </div>
+        </form>
+      </main>
+
+      <footer class="footer-block">
+        <button class="primary-button">
+          <div class="label valign-text-middle">Перейти до доставки</div>
+        </button>
+        <p class="text-13 valign-text-middle">
+          Потрібна допомога з оформленням <br />замовлення? З радістю допоможемо!
+        </p>
+      </footer>
+    </div>
+  </div>
+  <script defer src="js/cart-3.js"></script>
+</body>
+</html>
